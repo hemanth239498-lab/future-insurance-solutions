@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Future Insurance Solutions Inc. | Life &amp; health coverage, Calgary</title>
+<meta name="description" content="Eric Claveria is an independent life and health insurance agent in Calgary, Alberta. Permanent, whole life, term, accident &amp; sickness, critical illness and funeral coverage. Online quotes available.">
+<link rel="icon" href="data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2040%2044'><path%20d='M20%202.5%20L36%208.2%20V21%20C36%2032.4%2029.1%2040%2020%2042.8%20C10.9%2040%204%2032.4%204%2021%20V8.2%20Z'%20fill='%236491DE'/><path%20d='M12.6%2021.8%20L17.9%2027.2%20L28%2015.4'%20stroke='%23FFFFFF'%20stroke-width='4'%20fill='none'%20stroke-linecap='round'%20stroke-linejoin='round'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   FUTURE INSURANCE SOLUTIONS INC.
+   Single-file site. Two core colours: white + United Nations blue.
+   Darker blues are used only for depth on dark sections.
+   ============================================================ */
+
+:root{
+  /* --- core --- */
+  --white:      #FFFFFF;
+  --un:         #6491DE;   /* United Nations blue - the brand */
+  /* --- depth only --- */
+  --un-600:     #4374C9;
+  --navy:       #16305C;
+  --navy-900:   #0C1D3A;
+  /* --- neutrals derived from the blue --- */
+  --mist:       #EEF3FC;
+  --mist-deep:  #DFE8F8;
+  --ink:        #10203D;
+  --slate:      #5A6E8C;
+  --line:       rgba(16,32,61,.13);
+  --line-soft:  rgba(16,32,61,.07);
+  --on-dark:    #C6D6F2;
+  --on-dark-dim:#93A9CF;
+
+  --shadow-sm: 0 1px 2px rgba(16,32,61,.06);
+  --shadow-md: 0 12px 32px -12px rgba(16,32,61,.22);
+  --shadow-lg: 0 30px 70px -30px rgba(16,32,61,.38);
+
+  --r:   4px;
+  --r-lg:8px;
+
+  --display: 'Bricolage Grotesque', 'Segoe UI', system-ui, sans-serif;
+  --body:    'Public Sans', 'Segoe UI', system-ui, sans-serif;
+  --mono:    'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  --gut: 34px;
+  --maxw: 1200px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth; scroll-padding-top:126px; -webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--white);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button,input,select,textarea{font:inherit;color:inherit;}
+
+h1,h2,h3,h4{
+  font-family:var(--display);
+  font-weight:700;
+  line-height:1.04;
+  letter-spacing:-.028em;
+  color:var(--ink);
+  text-wrap:balance;
+}
+
+/* accessible focus everywhere */
+a:focus-visible,button:focus-visible,input:focus-visible,
+select:focus-visible,textarea:focus-visible,summary:focus-visible{
+  outline:2.5px solid var(--un-600);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gut);}
+.band{padding:104px 0;}
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:200;
+  background:var(--navy);color:#fff;padding:12px 20px;border-radius:0 0 var(--r) 0;
+}
+.skip:focus{left:0;}
+
+/* --- shared type utilities --- */
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.72rem;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--un-600);
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{
+  content:"";width:22px;height:1.5px;background:var(--un);flex:none;
+}
+.eyebrow.on-dark{color:#9FBCEC;}
+.eyebrow.on-dark::before{background:#6E97E0;}
+
+.h-sec{font-size:clamp(2rem,3.7vw,3rem);}
+.lede{color:var(--slate);font-size:1.08rem;max-width:56ch;}
+
+.sec-head{margin-bottom:56px;max-width:62ch;}
+.sec-head .eyebrow{margin-bottom:20px;}
+.sec-head h2{margin-bottom:18px;}
+
+/* --- buttons --- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:var(--body);font-weight:600;font-size:.97rem;
+  padding:14px 26px;border-radius:var(--r);border:1.5px solid transparent;
+  cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .18s;
+  white-space:nowrap;text-align:center;
+}
+.btn:active{transform:translateY(1px);}
+.btn-solid{background:var(--un);color:#fff;}
+.btn-solid:hover{background:var(--un-600);}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--white);}
+.btn-line:hover{border-color:var(--un);color:var(--un-600);}
+.btn-onblue{background:#fff;color:var(--navy);}
+.btn-onblue:hover{background:var(--mist);}
+.btn-ghost-dark{border-color:rgba(255,255,255,.34);color:#fff;}
+.btn-ghost-dark:hover{border-color:#fff;background:rgba(255,255,255,.08);}
+.btn svg{width:16px;height:16px;flex:none;}
+
+/* ============================================================
+   TICKER  —  the always-visible call / quote strip in the header
+   ============================================================ */
+.ticker{
+  background:var(--navy-900);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  overflow:hidden;
+  position:relative;
+}
+.ticker-track{
+  display:flex;width:max-content;
+  animation:tick 34s linear infinite;
+}
+.ticker:hover .ticker-track,
+.ticker:focus-within .ticker-track{animation-play-state:paused;}
+@keyframes tick{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+.ticker-set{display:flex;align-items:center;flex:none;}
+.ticker-set > *{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:9px 26px;white-space:nowrap;
+  font-family:var(--mono);font-size:.76rem;font-weight:500;
+  letter-spacing:.09em;text-transform:uppercase;color:#C6D6F2;
+}
+.ticker-set a{transition:color .15s;}
+.ticker-set a:hover{color:#fff;}
+.ticker-set svg{width:14px;height:14px;flex:none;}
+.ticker-set .tk-phone{color:#fff;}
+.ticker-set .tk-phone svg{color:var(--un);}
+.ticker-set .tk-quote{color:#8FB2EE;}
+.ticker-set .tk-wa svg{color:#4ADE80;}
+.ticker-set .dot{padding:0;opacity:.35;color:#8FB2EE;}
+@media(prefers-reduced-motion:reduce){
+  .ticker-track{animation:none;}
+}
+@media(max-width:600px){
+  .ticker-set > *{padding:8px 18px;font-size:.68rem;}
+}
+
+/* ============================================================
+   WHATSAPP  —  floating contact button
+   ============================================================ */
+.wa-float{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  display:flex;align-items:center;gap:0;
+  background:#25D366;color:#fff;
+  border-radius:99px;padding:14px;
+  box-shadow:0 10px 30px -8px rgba(18,60,40,.5);
+  transition:gap .28s cubic-bezier(.22,1,.36,1),padding .28s cubic-bezier(.22,1,.36,1),background .18s,transform .18s;
+}
+.wa-float:hover,.wa-float:focus-visible{
+  background:#1EBE5A;gap:10px;padding:14px 20px 14px 16px;transform:translateY(-2px);
+}
+.wa-float svg{width:26px;height:26px;flex:none;}
+.wa-float span{
+  max-width:0;overflow:hidden;white-space:nowrap;
+  font-weight:600;font-size:.93rem;
+  transition:max-width .28s cubic-bezier(.22,1,.36,1);
+}
+.wa-float:hover span,.wa-float:focus-visible span{max-width:190px;}
+@media(max-width:600px){
+  .wa-float{right:16px;bottom:16px;padding:13px;}
+  .wa-float:hover,.wa-float:focus-visible{gap:0;padding:13px;}
+  .wa-float:hover span,.wa-float:focus-visible span{max-width:0;}
+}
+@media(prefers-reduced-motion:reduce){
+  .wa-float,.wa-float span{transition:none;}
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.9);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+  transition:box-shadow .25s,border-color .25s;
+}
+header.stuck{box-shadow:var(--shadow-sm);border-color:var(--line);}
+.nav{
+  max-width:var(--maxw);margin:0 auto;padding:15px var(--gut);
+  display:flex;align-items:center;gap:28px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex:none;}
+.brand svg{width:30px;height:33px;flex:none;}
+.brand-text{
+  font-family:var(--display);font-weight:700;font-size:1.12rem;
+  letter-spacing:-.02em;line-height:1;
+}
+.brand-text span{
+  display:block;font-family:var(--mono);font-weight:400;
+  font-size:.56rem;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--slate);margin-top:4px;
+}
+.nav-links{display:flex;gap:30px;margin-left:auto;}
+.nav-links a{
+  font-size:.94rem;font-weight:500;color:var(--slate);
+  position:relative;padding:4px 0;transition:color .18s;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;
+  background:var(--un);transform:scaleX(0);transform-origin:left;
+  transition:transform .22s ease;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);}
+.nav-links a:hover::after,.nav-links a.active::after{transform:scaleX(1);}
+.nav-side{display:flex;align-items:center;gap:16px;flex:none;}
+.nav-phone{
+  font-family:var(--mono);font-size:.86rem;font-weight:500;color:var(--ink);
+  display:flex;align-items:center;gap:7px;transition:color .18s;
+}
+.nav-phone:hover{color:var(--un-600);}
+.nav-phone svg{width:14px;height:14px;color:var(--un);}
+.nav-cta{padding:11px 20px;font-size:.9rem;}
+.burger{
+  display:none;background:none;border:1.5px solid var(--line);
+  border-radius:var(--r);padding:9px;cursor:pointer;line-height:0;
+}
+.burger svg{width:20px;height:20px;stroke:var(--ink);}
+
+@media(max-width:1040px){ .nav-phone{display:none;} .nav-links{gap:22px;} }
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .nav-cta{display:none;}
+  .burger{display:block;margin-left:auto;}
+}
+
+/* mobile drawer */
+.drawer{
+  position:fixed;inset:0;z-index:99;
+  background:var(--white);
+  padding:132px var(--gut) 40px;
+  display:flex;flex-direction:column;gap:2px;
+  transform:translateY(-12px);opacity:0;pointer-events:none;
+  transition:opacity .24s ease,transform .24s ease;
+}
+.drawer.open{opacity:1;transform:none;pointer-events:auto;}
+.drawer a.d-link{
+  font-family:var(--display);font-size:1.65rem;font-weight:600;letter-spacing:-.025em;
+  padding:16px 0;border-bottom:1px solid var(--line-soft);
+}
+.drawer .d-foot{margin-top:auto;display:flex;flex-direction:column;gap:14px;padding-top:32px;}
+.drawer .d-foot .nav-phone{display:flex;font-size:1rem;}
+
+/* ============================================================
+   HERO  —  the thesis: coverage drawn across a lifetime
+   ============================================================ */
+.hero{padding:80px 0 0;position:relative;}
+.hero::before{ /* faint blue wash, bottom-left */
+  content:"";position:absolute;left:-10%;bottom:-30%;width:60%;height:80%;
+  background:radial-gradient(circle,rgba(100,145,222,.13),transparent 62%);
+  pointer-events:none;
+}
+.hero .wrap{position:relative;}
+.hero-grid{
+  display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  gap:72px;align-items:center;
+}
+@media(max-width:1000px){ .hero-grid{grid-template-columns:1fr;gap:52px;} }
+
+.hero h1{
+  font-size:clamp(2.6rem,5.6vw,4.35rem);
+  font-weight:800;
+  margin:22px 0 24px;
+  letter-spacing:-.038em;
+}
+.hero h1 em{
+  font-style:normal;color:var(--un-600);
+  position:relative;white-space:nowrap;
+}
+.hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:.06em;height:.075em;
+  background:var(--un);opacity:.32;border-radius:2px;
+}
+.hero p.lede{font-size:1.13rem;margin-bottom:36px;max-width:44ch;}
+.hero-ctas{display:flex;gap:13px;flex-wrap:wrap;}
+
+/* --- trust strip (structural facts, no invented numbers) --- */
+.trust{
+  margin-top:88px;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+@media(max-width:820px){ .trust{grid-template-columns:repeat(2,1fr);} }
+.trust div{
+  padding:26px 26px 26px 0;
+  border-right:1px solid var(--line-soft);
+}
+.trust div:last-child{border-right:none;}
+@media(max-width:820px){
+  .trust div:nth-child(2n){border-right:none;}
+  .trust div:nth-child(-n+2){border-bottom:1px solid var(--line-soft);}
+}
+.trust b{
+  display:block;font-family:var(--display);font-size:1.06rem;
+  font-weight:600;letter-spacing:-.02em;margin-bottom:3px;
+}
+.trust span{font-family:var(--mono);font-size:.72rem;letter-spacing:.11em;text-transform:uppercase;color:var(--slate);}
+
+/* ============================================================
+   SIGNATURE: THE COVERAGE SPAN DIAGRAM
+   Each coverage drawn as the shape it actually has across a life.
+   ============================================================ */
+.spanbox{
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--white);
+  box-shadow:var(--shadow-md);
+  padding:26px 28px 20px;
+}
+.spanbox-head{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+  padding-bottom:16px;margin-bottom:18px;border-bottom:1px solid var(--line-soft);
+}
+.spanbox-head h2{font-size:1.02rem;font-weight:600;letter-spacing:-.015em;}
+.spanbox-head p{font-family:var(--mono);font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--slate);}
+
+.span-rows{display:flex;flex-direction:column;}
+.span-row{
+  display:grid;grid-template-columns:132px minmax(0,1fr);
+  gap:16px;align-items:center;
+  padding:11px 0;
+  border-radius:var(--r);
+  transition:opacity .22s ease;
+  cursor:default;
+}
+.span-row .s-name{
+  font-size:.86rem;font-weight:600;letter-spacing:-.01em;
+  line-height:1.25;
+}
+.span-row .s-note{
+  font-family:var(--mono);font-size:.63rem;color:var(--slate);
+  letter-spacing:.05em;margin-top:2px;display:block;
+}
+.span-track{position:relative;height:22px;}
+.span-track::before{ /* the lifetime rule */
+  content:"";position:absolute;left:0;right:0;top:50%;height:1px;
+  background:var(--line-soft);
+}
+.span-bar{
+  position:absolute;top:50%;height:7px;margin-top:-3.5px;
+  background:var(--un);border-radius:99px;
+  left:var(--from);right:var(--to);
+  transform:scaleX(0);transform-origin:left center;
+  transition:transform .8s cubic-bezier(.22,1,.36,1), background .2s;
+}
+.spanbox.drawn .span-bar{transform:scaleX(1);}
+/* runs past the end — permanent / whole life */
+.span-bar.open{
+  border-radius:99px 0 0 99px;
+}
+.span-bar.open::after{
+  content:"";position:absolute;right:-11px;top:50%;margin-top:-7px;
+  border:7px solid transparent;border-left-color:var(--un);
+}
+/* episodic — accident & sickness */
+.span-bar.episodic{
+  background:repeating-linear-gradient(90deg,var(--un) 0 22px,transparent 22px 34px);
+  border-radius:2px;
+}
+/* single lump-sum event — critical illness */
+.span-point{
+  position:absolute;top:50%;left:var(--at);
+  width:15px;height:15px;margin:-7.5px 0 0 -7.5px;
+  background:var(--un);border-radius:3px;transform:rotate(45deg) scale(0);
+  transition:transform .55s cubic-bezier(.34,1.56,.64,1);
+}
+.spanbox.drawn .span-point{transform:rotate(45deg) scale(1);}
+.span-point::after{
+  content:"";position:absolute;inset:4px;background:var(--white);border-radius:1px;
+}
+/* terminal cap — funeral */
+.span-cap{
+  position:absolute;top:50%;right:0;width:4px;height:20px;margin-top:-10px;
+  background:var(--un);border-radius:2px;transform:scaleY(0);
+  transition:transform .5s cubic-bezier(.22,1,.36,1);
+}
+.spanbox.drawn .span-cap{transform:scaleY(1);}
+.span-lead{ /* faint line leading up to the cap */
+  position:absolute;top:50%;left:0;right:6px;height:1px;margin-top:-.5px;
+  background:repeating-linear-gradient(90deg,var(--mist-deep) 0 5px,transparent 5px 10px);
+}
+
+/* stagger */
+.spanbox.drawn .span-row:nth-child(1) .span-bar{transition-delay:.05s;}
+.spanbox.drawn .span-row:nth-child(2) .span-bar{transition-delay:.14s;}
+.spanbox.drawn .span-row:nth-child(3) .span-bar{transition-delay:.23s;}
+.spanbox.drawn .span-row:nth-child(4) .span-bar{transition-delay:.32s;}
+.spanbox.drawn .span-row:nth-child(5) .span-point{transition-delay:.44s;}
+.spanbox.drawn .span-row:nth-child(6) .span-cap{transition-delay:.53s;}
+
+/* hover: isolate one span */
+.span-rows:hover .span-row{opacity:.38;}
+.span-rows .span-row:hover{opacity:1;}
+
+.span-axis{
+  display:flex;justify-content:space-between;
+  margin-top:14px;padding-top:12px;border-top:1px solid var(--line-soft);
+  margin-left:148px;
+}
+.span-axis span{font-family:var(--mono);font-size:.66rem;color:var(--slate);letter-spacing:.06em;}
+
+@media(max-width:1000px){ .spanbox{padding:22px 20px 16px;} }
+@media(max-width:560px){
+  .span-row{grid-template-columns:1fr;gap:7px;padding:13px 0;}
+  .span-axis{margin-left:0;}
+  .spanbox-head{display:block;}
+  .spanbox-head p{display:none;}
+}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{background:var(--white);}
+.about-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);
+  gap:76px;align-items:start;
+}
+@media(max-width:960px){ .about-grid{grid-template-columns:1fr;gap:48px;} }
+.about-lead{
+  font-family:var(--display);font-size:clamp(1.3rem,2.1vw,1.62rem);
+  font-weight:500;line-height:1.35;letter-spacing:-.022em;
+  margin-bottom:26px;text-wrap:balance;
+}
+.about p+p{margin-top:16px;color:var(--slate);}
+
+.pillars{margin-top:44px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);}
+@media(max-width:620px){ .pillars{grid-template-columns:1fr;} }
+.pillar{background:var(--white);padding:24px 24px 26px;}
+.pillar svg{width:22px;height:22px;color:var(--un);margin-bottom:14px;}
+.pillar h3{font-size:1rem;font-weight:600;margin-bottom:6px;letter-spacing:-.015em;}
+.pillar p{font-size:.92rem;color:var(--slate);line-height:1.55;}
+
+/* advisor card */
+.advisor{
+  border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;
+  position:sticky;top:142px;
+}
+@media(max-width:960px){ .advisor{position:static;} }
+.adv-photo{position:relative;margin:0;background:var(--navy);}
+.adv-photo img{
+  width:100%;height:auto;display:block;
+  aspect-ratio:5/6;object-fit:cover;object-position:center 15%;
+}
+.adv-photo figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:64px 26px 22px;color:#fff;
+  background:linear-gradient(180deg,rgba(12,29,58,0) 0%,rgba(12,29,58,.55) 42%,rgba(12,29,58,.93) 100%);
+}
+.adv-photo h3{color:#fff;font-size:1.5rem;margin-bottom:5px;}
+.adv-photo .role{
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.15em;
+  text-transform:uppercase;color:#9FBCEC;
+}
+.advisor-quote{background:var(--navy);padding:0 26px 26px;}
+.advisor-quote blockquote{color:var(--on-dark);font-size:.98rem;line-height:1.6;}
+.advisor-body{padding:6px 26px 26px;background:var(--white);}
+.adv-row{
+  display:flex;align-items:center;gap:13px;
+  padding:16px 0;border-bottom:1px solid var(--line-soft);
+}
+.adv-row:last-of-type{border-bottom:none;}
+.adv-row svg{width:17px;height:17px;color:var(--un);flex:none;}
+.adv-row .k{font-family:var(--mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;color:var(--slate);display:block;}
+.adv-row .v{font-size:.97rem;font-weight:600;letter-spacing:-.01em;line-height:1.4;display:block;}
+.adv-row .v.adv-email{font-size:.88rem;word-break:break-word;}
+a.adv-row:hover .v{color:var(--un-600);}
+.advisor-body .btn{width:100%;margin-top:16px;}
+
+/* the line Eric signs off with */
+.creed{
+  margin-top:40px;padding:26px 0 0;border-top:2px solid var(--un);
+}
+.creed blockquote{
+  font-family:var(--display);font-weight:600;
+  font-size:clamp(1.15rem,1.9vw,1.42rem);letter-spacing:-.024em;
+  line-height:1.25;color:var(--un-600);
+}
+.creed figcaption{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;
+  color:var(--slate);margin-top:10px;
+}
+
+/* ============================================================
+   COVERAGES  —  duotone imagery + the same span language
+   ============================================================ */
+.coverages{background:var(--mist);}
+.cov-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:940px){ .cov-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:620px){ .cov-grid{grid-template-columns:1fr;} }
+
+.cov-card{
+  background:var(--white);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);overflow:hidden;
+  display:flex;flex-direction:column;
+  transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s,border-color .3s;
+}
+.cov-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--line);}
+
+/* --- the duotone treatment: one blue system out of six clashing sources --- */
+.cov-media{
+  position:relative;aspect-ratio:16/9;overflow:hidden;
+  background:var(--navy);
+  isolation:isolate;
+}
+.cov-media img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.16) brightness(1.02);
+  mix-blend-mode:luminosity;
+  transform:scale(1.02);
+  transition:transform .6s cubic-bezier(.22,1,.36,1);
+}
+/* Sources arrive at wildly different exposures. These two are near-white
+   illustrations; pull them down so all six cards read as one tonal set. */
+.cov-media.tone-pale img{ filter:grayscale(1) contrast(.98) brightness(.72); }
+.cov-media.tone-pale::after{
+  background:linear-gradient(180deg,rgba(100,145,222,.28) 0%,rgba(22,48,92,.34) 46%,rgba(12,29,58,.78) 100%);
+}
+.cov-card:hover .cov-media img{transform:scale(1.06);}
+.cov-media::after{ /* blue wash + bottom scrim, unifies every source image */
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(180deg,rgba(100,145,222,.34) 0%,rgba(22,48,92,.28) 46%,rgba(12,29,58,.76) 100%);
+  pointer-events:none;
+}
+/* generated art for the coverage with no supplied photo */
+.cov-media.drawn-art{background:var(--navy);}
+.cov-media.drawn-art svg{position:absolute;inset:0;width:100%;height:100%;}
+
+.cov-body{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1;}
+.cov-body h3{font-size:1.16rem;margin-bottom:9px;letter-spacing:-.024em;}
+.cov-body p{font-size:.94rem;color:var(--slate);line-height:1.58;flex:1;}
+
+/* mini span diagram, same visual language as the hero */
+.cov-span{margin:18px 0 14px;}
+.cov-span .span-track{height:14px;}
+.cov-span .span-bar{height:5px;margin-top:-2.5px;transform:scaleX(1);}
+.cov-span .span-bar.open::after{right:-9px;margin-top:-6px;border-width:6px;}
+.cov-span .span-point{width:12px;height:12px;margin:-6px 0 0 -6px;transform:rotate(45deg);}
+.cov-span .span-point::after{inset:3.5px;}
+.cov-span .span-cap{transform:scaleY(1);height:15px;margin-top:-7.5px;}
+.cov-shape{
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--un-600);margin-top:10px;display:block;
+}
+
+/* ============================================================
+   PROCESS — genuinely sequential, so it earns its numbering
+   ============================================================ */
+.process{background:var(--navy-900);color:#fff;}
+.process h2,.process h3{color:#fff;}
+.process .lede{color:var(--on-dark);}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;}
+@media(max-width:860px){ .step-grid{grid-template-columns:1fr;} }
+.step{
+  padding:36px 34px 40px;
+  border-left:1px solid rgba(255,255,255,.15);
+  position:relative;
+}
+.step:first-child{border-left-color:var(--un);}
+@media(max-width:860px){
+  .step{border-left:none;border-top:1px solid rgba(255,255,255,.15);padding:30px 0 34px;}
+  .step:first-child{border-top-color:var(--un);}
+}
+.step .n{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.17em;
+  color:#7FA3E4;margin-bottom:20px;display:block;
+}
+.step h3{font-size:1.24rem;margin-bottom:10px;letter-spacing:-.025em;}
+.step p{color:var(--on-dark);font-size:.96rem;max-width:34ch;line-height:1.6;}
+
+/* ============================================================
+   QUOTE
+   ============================================================ */
+.quote-grid{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:72px;align-items:start;
+}
+@media(max-width:960px){ .quote-grid{grid-template-columns:1fr;gap:44px;} }
+.quote-side ul{list-style:none;margin-top:32px;}
+.quote-side li{
+  display:flex;gap:14px;align-items:flex-start;
+  padding:15px 0;border-top:1px solid var(--line-soft);
+  font-size:.97rem;
+}
+.quote-side li svg{width:19px;height:19px;color:var(--un);flex:none;margin-top:2px;}
+.quote-side li b{font-weight:600;display:block;letter-spacing:-.01em;}
+.quote-side li span{color:var(--slate);font-size:.9rem;}
+
+.qform{
+  background:var(--mist);border:1px solid var(--mist-deep);
+  border-radius:var(--r-lg);padding:34px;
+}
+@media(max-width:520px){ .qform{padding:24px 20px;} }
+.f-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:620px){ .f-row{grid-template-columns:1fr;} }
+.field{margin-bottom:18px;}
+.field label{
+  display:block;font-family:var(--mono);font-size:.67rem;font-weight:500;
+  letter-spacing:.13em;text-transform:uppercase;color:var(--slate);margin-bottom:8px;
+}
+.field .req{color:var(--un-600);}
+.field input,.field select,.field textarea{
+  width:100%;background:var(--white);
+  border:1.5px solid var(--line);border-radius:var(--r);
+  padding:12px 14px;font-size:.97rem;
+  transition:border-color .18s,box-shadow .18s;
+}
+.field textarea{min-height:104px;resize:vertical;}
+.field select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235A6E8C' stroke-width='2.2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;background-size:16px;
+  padding-right:40px;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--un);box-shadow:0 0 0 3px rgba(100,145,222,.18);
+}
+.field.bad input,.field.bad select,.field.bad textarea{border-color:#C0392B;}
+.err{
+  display:none;color:#C0392B;font-size:.83rem;margin-top:6px;font-weight:500;
+}
+.field.bad .err{display:block;}
+
+.consent{display:flex;gap:11px;align-items:flex-start;margin:6px 0 22px;}
+.consent input{
+  width:18px;height:18px;flex:none;margin-top:3px;accent-color:var(--un);cursor:pointer;
+}
+.consent label{font-size:.87rem;color:var(--slate);line-height:1.5;cursor:pointer;}
+.consent.bad label{color:#C0392B;}
+.qform .btn-solid{width:100%;padding:15px;}
+.form-note{
+  font-family:var(--mono);font-size:.68rem;color:var(--slate);
+  text-align:center;margin-top:14px;letter-spacing:.04em;
+}
+.sent{
+  display:none;text-align:center;padding:44px 20px;
+}
+.sent.show{display:block;}
+.sent svg{width:52px;height:52px;color:var(--un);margin:0 auto 20px;}
+.sent h3{font-size:1.4rem;margin-bottom:10px;}
+.sent p{color:var(--slate);font-size:.97rem;max-width:36ch;margin:0 auto;}
+.qform.done .f-live{display:none;}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq{background:var(--mist);}
+.faq-wrap{max-width:880px;margin:0 auto;}
+.faq-list{border-top:1px solid var(--mist-deep);}
+.faq-item{border-bottom:1px solid var(--mist-deep);}
+.faq-q{
+  width:100%;background:none;border:none;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:24px;
+  padding:24px 0;text-align:left;
+  font-family:var(--display);font-size:1.09rem;font-weight:600;
+  letter-spacing:-.02em;color:var(--ink);
+  transition:color .18s;
+}
+.faq-q:hover{color:var(--un-600);}
+.faq-ico{
+  flex:none;width:26px;height:26px;border-radius:50%;
+  border:1.5px solid var(--un);position:relative;
+  transition:background .22s;
+}
+.faq-ico::before,.faq-ico::after{
+  content:"";position:absolute;background:var(--un-600);transition:opacity .2s,background .2s;
+}
+.faq-ico::before{top:11px;left:6px;width:12px;height:2px;}
+.faq-ico::after{top:6px;left:11px;width:2px;height:12px;}
+.faq-item.open .faq-ico{background:var(--un);}
+.faq-item.open .faq-ico::before{background:#fff;}
+.faq-item.open .faq-ico::after{opacity:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.22,1,.36,1);}
+.faq-a p{color:var(--slate);font-size:.98rem;padding-bottom:24px;max-width:70ch;}
+
+/* ============================================================
+   CTA BAND + FOOTER
+   ============================================================ */
+.cta{background:var(--un);color:#fff;padding:74px 0;}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;}
+.cta h2{color:#fff;font-size:clamp(1.7rem,3vw,2.35rem);max-width:19ch;}
+.cta p{color:#E4EDFC;margin-top:10px;font-size:1.02rem;}
+.cta-acts{display:flex;gap:13px;flex-wrap:wrap;}
+
+footer{background:var(--navy-900);color:var(--on-dark-dim);padding:76px 0 30px;}
+.f-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:60px;}
+@media(max-width:860px){ .f-grid{grid-template-columns:1fr 1fr;gap:38px;} }
+@media(max-width:480px){ .f-grid{grid-template-columns:1fr;} }
+.f-brand{display:flex;align-items:center;gap:11px;margin-bottom:18px;}
+.f-brand svg{width:28px;height:31px;}
+.f-brand .brand-text{color:#fff;}
+.f-brand .brand-text span{color:var(--on-dark-dim);}
+footer .f-about{font-size:.93rem;max-width:34ch;line-height:1.6;}
+.f-col h4{
+  color:#fff;font-family:var(--mono);font-size:.68rem;font-weight:500;
+  letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px;
+}
+.f-col a,.f-col p{display:block;font-size:.93rem;padding:6px 0;color:var(--on-dark-dim);transition:color .16s;}
+.f-col a.f-email{font-size:.86rem;word-break:break-word;}
+.f-col a:hover{color:#fff;}
+.f-bottom{
+  border-top:1px solid rgba(255,255,255,.12);padding-top:26px;
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:.83rem;color:#7A8FB8;
+}
+.f-bottom .disclaimer{max-width:62ch;line-height:1.55;}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testimonials{background:var(--mist);}
+.tm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:940px){ .tm-grid{grid-template-columns:1fr;max-width:620px;} }
+.tm-card{
+  background:var(--white);border:1px solid var(--line-soft);
+  border-radius:var(--r-lg);padding:30px 28px 26px;
+  display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden;
+}
+.tm-card::before{
+  content:"“";position:absolute;top:-6px;right:20px;
+  font-family:var(--display);font-weight:700;font-size:5.5rem;line-height:1;
+  color:var(--un);opacity:.15;pointer-events:none;
+}
+.tm-quote{font-size:1.01rem;line-height:1.62;flex:1;position:relative;z-index:1;}
+.tm-by{
+  display:flex;align-items:center;gap:13px;
+  padding-top:18px;border-top:1px solid var(--line-soft);
+}
+.tm-mark{
+  width:40px;height:40px;border-radius:50%;flex:none;
+  background:var(--mist);color:var(--un-600);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--display);font-weight:700;font-size:.88rem;letter-spacing:-.01em;
+}
+.tm-name{font-weight:600;font-size:.94rem;letter-spacing:-.01em;}
+.tm-meta{
+  font-family:var(--mono);font-size:.65rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--slate);
+}
+
+/* ============================================================
+   SCROLL REVEAL + MOTION PREFERENCES
+   ============================================================ */
+.rise{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,1,.36,1);}
+.rise.in{opacity:1;transform:none;}
+.rise.d1{transition-delay:.07s;} .rise.d2{transition-delay:.14s;}
+.rise.d3{transition-delay:.21s;} .rise.d4{transition-delay:.28s;} .rise.d5{transition-delay:.35s;}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}
+  .rise{opacity:1;transform:none;}
+  .span-bar{transform:scaleX(1)!important;}
+  .span-point{transform:rotate(45deg) scale(1)!important;}
+  .span-cap{transform:scaleY(1)!important;}
+}
+
+@media print{
+  header,.drawer,.cta,.hero-ctas,.qform{display:none;}
+  body{font-size:12pt;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ══════════════════ HEADER ══════════════════ -->
+<header id="site-header">
+  <div class="ticker">
+    <div class="ticker-track">
+      <div class="ticker-set">
+        <a class="tk-phone" href="tel:+14036897740"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>Call or text +1 403 689 7740</a>
+        <span class="dot">&bull;</span>
+        <a class="tk-quote" href="#quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Get a free quote online</a>
+        <span class="dot">&bull;</span>
+        <a class="tk-wa" href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.25c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.1-8.24 8.1Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>Message Eric on WhatsApp</a>
+        <span class="dot">&bull;</span>
+        <span>Independent agent &middot; Calgary, AB</span>
+        <span class="dot">&bull;</span>
+        <span>Free, no-obligation quotes</span>
+        <span class="dot">&bull;</span>
+      </div>
+      <div class="ticker-set" aria-hidden="true">
+        <a class="tk-phone" href="tel:+14036897740"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>Call or text +1 403 689 7740</a>
+        <span class="dot">&bull;</span>
+        <a class="tk-quote" href="#quote"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Get a free quote online</a>
+        <span class="dot">&bull;</span>
+        <a class="tk-wa" href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.25c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.1-8.24 8.1Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>Message Eric on WhatsApp</a>
+        <span class="dot">&bull;</span>
+        <span>Independent agent &middot; Calgary, AB</span>
+        <span class="dot">&bull;</span>
+        <span>Free, no-obligation quotes</span>
+        <span class="dot">&bull;</span>
+      </div>
+    </div>
+  </div>
+  <nav class="nav" aria-label="Primary">
+    <a href="#home" class="brand" aria-label="Future Insurance Solutions, home">
+      <svg viewBox="0 0 40 44" fill="none" aria-hidden="true">
+        <path d="M20 2.5 L36 8.2 V21 C36 32.4 29.1 40 20 42.8 C10.9 40 4 32.4 4 21 V8.2 Z" fill="#6491DE"/>
+        <path d="M12.6 21.8 L17.9 27.2 L28 15.4" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">Future Insurance<span>Solutions Inc.</span></span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#home" data-nav>Home</a>
+      <a href="#about" data-nav>About Me</a>
+      <a href="#coverages" data-nav>Coverages</a>
+      <a href="#quote" data-nav>Quote</a>
+      <a href="#faq" data-nav>FAQ</a>
+    </div>
+
+    <div class="nav-side">
+      <a class="nav-phone" href="tel:+14036897740">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+        403-689-7740
+      </a>
+      <a href="#quote" class="btn btn-solid nav-cta">Get a free quote</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- mobile drawer -->
+<div class="drawer" id="drawer">
+  <a href="#home" class="d-link">Home</a>
+  <a href="#about" class="d-link">About Me</a>
+  <a href="#coverages" class="d-link">Coverages</a>
+  <a href="#quote" class="d-link">Quote</a>
+  <a href="#faq" class="d-link">FAQ</a>
+  <div class="d-foot">
+    <a class="nav-phone" href="tel:+14036897740">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+      403-689-7740
+    </a>
+    <a href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener" class="btn btn-line">Message on WhatsApp</a>
+    <a href="#quote" class="btn btn-solid">Get a free quote</a>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ══════════════════ HERO ══════════════════ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <div class="hero-copy">
+        <p class="eyebrow rise">Independent insurance agent &middot; Calgary, AB</p>
+        <h1 class="rise d1">Coverage has a shape.<br>Let's find <em>yours</em>.</h1>
+        <p class="lede rise d2">
+          Term, whole life, critical illness &mdash; they aren't tiers of the same product.
+          Each one protects a different stretch of your life. We map the gaps, compare
+          carriers, and build the combination that fits.
+        </p>
+        <div class="hero-ctas rise d3">
+          <a href="#quote" class="btn btn-solid">
+            Get a free quote
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#coverages" class="btn btn-line">See all six coverages</a>
+        </div>
+      </div>
+
+      <!-- ─── SIGNATURE: a lifetime, with each coverage drawn as its true shape ─── -->
+      <div class="spanbox rise d2" id="spanbox">
+        <div class="spanbox-head">
+          <h2>What each coverage actually covers</h2>
+          <p>One lifetime</p>
+        </div>
+
+        <div class="span-rows">
+          <div class="span-row">
+            <div>
+              <div class="s-name">Permanent</div>
+              <span class="s-note">never expires</span>
+            </div>
+            <div class="span-track">
+              <i class="span-bar open" style="--from:0%;--to:4%"></i>
+            </div>
+          </div>
+
+          <div class="span-row">
+            <div>
+              <div class="s-name">Whole life</div>
+              <span class="s-note">builds cash value</span>
+            </div>
+            <div class="span-track">
+              <i class="span-bar open" style="--from:0%;--to:4%"></i>
+            </div>
+          </div>
+
+          <div class="span-row">
+            <div>
+              <div class="s-name">Term</div>
+              <span class="s-note">10 / 20 / 30 yrs</span>
+            </div>
+            <div class="span-track">
+              <i class="span-bar" style="--from:4%;--to:44%"></i>
+            </div>
+          </div>
+
+          <div class="span-row">
+            <div>
+              <div class="s-name">Accident &amp; sickness</div>
+              <span class="s-note">while you can't work</span>
+            </div>
+            <div class="span-track">
+              <i class="span-bar episodic" style="--from:12%;--to:22%"></i>
+            </div>
+          </div>
+
+          <div class="span-row">
+            <div>
+              <div class="s-name">Critical illness</div>
+              <span class="s-note">lump sum on diagnosis</span>
+            </div>
+            <div class="span-track">
+              <i class="span-point" style="--at:58%"></i>
+            </div>
+          </div>
+
+          <div class="span-row">
+            <div>
+              <div class="s-name">Funeral</div>
+              <span class="s-note">final expenses</span>
+            </div>
+            <div class="span-track">
+              <i class="span-lead"></i>
+              <i class="span-cap"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="span-axis" aria-hidden="true">
+          <span>25</span><span>40</span><span>55</span><span>70</span><span>85+</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- structural facts, not invented statistics -->
+    <div class="trust rise">
+      <div><b>Independent agent</b><span>Not tied to one carrier</span></div>
+      <div><b>Six coverage types</b><span>Life and health</span></div>
+      <div><b>Online quotes</b><span>Free, no obligation</span></div>
+      <div><b>30+ years in finance</b><span>Licensed since 2016</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ ABOUT ME ══════════════════ -->
+<section class="band about" id="about">
+  <div class="wrap">
+    <div class="about-grid">
+
+      <div>
+        <p class="eyebrow rise" style="margin-bottom:22px;">About me</p>
+        <h2 class="h-sec rise d1" style="margin-bottom:26px;">
+          Your financial future<br>starts with a conversation.
+        </h2>
+        <p class="about-lead rise d2">
+          For over 30 years, finance has been part of my professional journey &mdash; and for
+          the past decade I&rsquo;ve had the privilege of helping hundreds of families better
+          understand their financial options.
+        </p>
+        <p class="rise d2">
+          Whether you want to protect your family, build wealth, plan for retirement, or
+          simply learn more about your finances, I&rsquo;m here to help and educate. Because
+          I&rsquo;m independent, I&rsquo;m not required to sell one company&rsquo;s product.
+          I compare what&rsquo;s available across my carriers and recommend the policy that
+          genuinely fits &mdash; occasionally that&rsquo;s less coverage than you came in
+          expecting to buy.
+        </p>
+        <p class="rise d2">
+          Most people arrive knowing they need &ldquo;life insurance&rdquo; and leave
+          understanding something more useful: which years of their life are actually
+          exposed, and what it costs to close each gap. I&rsquo;ll explain the exclusions
+          before you sign, review your policy as your life changes, and stay on the file
+          if a claim is ever made.
+        </p>
+
+        <figure class="creed rise d2">
+          <blockquote>Rise together. Grow together. Retire together.</blockquote>
+          <figcaption>Because happy families build a happier Canada. <span aria-hidden="true">&#127464;&#127462;</span></figcaption>
+        </figure>
+
+        <div class="pillars">
+          <div class="pillar rise">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3.5V12c0 5.2-3.4 8.9-8 10-4.6-1.1-8-4.8-8-10V6.5Z"/><path d="M9 12.2l2.2 2.3L15.4 10"/></svg>
+            <h3>Experienced</h3>
+            <p>Over 30 years in finance and licensed in insurance since 2016 &mdash; enough years to know which carriers treat which situations well.</p>
+          </div>
+          <div class="pillar rise d1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-9.3-8.6C.8 8.9 2.7 5.2 6.3 5.2c2 0 3.3 1.1 4 2.2.7-1.1 2-2.2 4-2.2 3.6 0 5.5 3.7 3.6 7.2C15.6 16.6 12 21 12 21Z"/></svg>
+            <h3>Compassionate</h3>
+            <p>My background is in accounts and finance, so I start by understanding your numbers and your situation &mdash; not by opening with a product.</p>
+          </div>
+          <div class="pillar rise d2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+            <h3>Commitment</h3>
+            <p>I&rsquo;m here for the long run, to support you as your life changes &mdash; new home, new child, new job, or a claim.</p>
+          </div>
+          <div class="pillar rise d3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1Z"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M9.5 13.5h5"/></svg>
+            <h3>Personalized</h3>
+            <p>I commit to personalized insurance solutions built around what you&rsquo;re actually protecting.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- your agent -->
+      <aside class="advisor rise d2" aria-label="Your agent">
+        <figure class="adv-photo">
+          <img src="eric-claveria.jpg" alt="Eric Claveria, independent insurance agent, Calgary" width="550" height="670" loading="lazy">
+          <figcaption>
+            <h3>Eric Claveria</h3>
+            <p class="role">Independent Insurance Agent</p>
+          </figcaption>
+        </figure>
+
+        <div class="advisor-quote">
+          <blockquote>&ldquo;Helping you protect what matters most and build a secure financial future.&rdquo;</blockquote>
+        </div>
+
+        <div class="advisor-body">
+          <a class="adv-row" href="tel:+14036897740">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2Z"/></svg>
+            <div><span class="k">Call or text</span><span class="v">+1 403 689 7740</span></div>
+          </a>
+          <a class="adv-row" href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.25c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.1-8.24 8.1Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+            <div><span class="k">WhatsApp</span><span class="v">Message Eric directly</span></div>
+          </a>
+          <a class="adv-row" href="mailto:Eric.claveria@mygreatway.ca">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+            <div><span class="k">Email</span><span class="v adv-email">Eric.claveria@mygreatway.ca</span></div>
+          </a>
+          <a class="adv-row" href="https://maps.google.com/?q=1223+31+Ave+NE,+Calgary,+AB+T2E+7W1,+Canada" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div><span class="k">Office</span><span class="v">1223 31 Ave NE<br>Calgary, AB T2E 7W1</span></div>
+          </a>
+          <a href="#quote" class="btn btn-solid">Get a free quote online</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ COVERAGES ══════════════════ -->
+<section class="band coverages" id="coverages">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rise">Coverages</p>
+      <h2 class="h-sec rise d1">Six ways to cover a life</h2>
+      <p class="lede rise d2">
+        The bar under each card is the same lifetime you saw above &mdash; showing where
+        that policy actually pays. Most households end up using two of these together.
+      </p>
+    </div>
+
+    <div class="cov-grid">
+
+      <!-- 1 · PERMANENT -->
+      <article class="cov-card rise">
+        <div class="cov-media">
+          <img src="Life%20insurance%20pic.jpg" alt="A paper family sheltered under an umbrella, representing lifelong protection" loading="lazy" width="612" height="408">
+        </div>
+        <div class="cov-body">
+          <h3>Permanent Insurance</h3>
+          <p>Coverage that stays in force for your whole life rather than expiring on a date. Premiums are higher than term, but the payout is guaranteed to arrive eventually &mdash; which is what makes it useful for estate and tax planning.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-bar open" style="--from:0%;--to:5%"></i></div>
+            <span class="cov-shape">Runs for life</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2 · WHOLE LIFE -->
+      <article class="cov-card rise d1">
+        <div class="cov-media tone-pale">
+          <img src="Whole%20life%20insurance%20pic.png" alt="Illustration of a family growing older beneath a protective umbrella" loading="lazy" width="670" height="374">
+        </div>
+        <div class="cov-body">
+          <h3>Whole Life Insurance</h3>
+          <p>A permanent policy with a level premium that never rises and a cash value that grows on a guaranteed schedule. You can borrow against that value later, which is why it often doubles as a long-horizon savings vehicle.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-bar open" style="--from:0%;--to:5%"></i></div>
+            <span class="cov-shape">Runs for life &middot; accrues value</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3 · TERM -->
+      <article class="cov-card rise d2">
+        <div class="cov-media tone-pale">
+          <img src="Term%20life%20insurance%20pic.png" alt="Wooden blocks being stacked to spell term life insurance" loading="lazy" width="573" height="322">
+        </div>
+        <div class="cov-body">
+          <h3>Term Insurance</h3>
+          <p>The most coverage per dollar, for a fixed window &mdash; usually 10, 20 or 30 years. Built to cover the years you'd leave the biggest hole: a mortgage, dependent children, or an income the household still relies on.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-bar" style="--from:5%;--to:45%"></i></div>
+            <span class="cov-shape">A fixed window</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4 · ACCIDENT & SICKNESS -->
+      <article class="cov-card rise">
+        <div class="cov-media">
+          <img src="Accident%20%26%20Sickness%20insurance%20pic.png" alt="A person with an arm in a cast handing over an accident claim card" loading="lazy" width="628" height="255">
+        </div>
+        <div class="cov-body">
+          <h3>Accident &amp; Sickness Insurance</h3>
+          <p>Replaces part of your income while an injury or illness keeps you off work, then stops once you're back. It covers the interruptions life insurance never touches &mdash; the months you survive but can't earn.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-bar episodic" style="--from:10%;--to:20%"></i></div>
+            <span class="cov-shape">Only while you're off work</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5 · CRITICAL ILLNESS -->
+      <article class="cov-card rise d1">
+        <div class="cov-media">
+          <img src="Critical%20illness%20insurance%20pic.png" alt="A critical illness insurance claim form on a desk beside a stethoscope" loading="lazy" width="522" height="392">
+        </div>
+        <div class="cov-body">
+          <h3>Critical Illness Insurance</h3>
+          <p>One tax-free lump sum on diagnosis of a covered condition &mdash; commonly cancer, heart attack or stroke. There are no rules on how you spend it: treatment abroad, a mortgage payout, or replacing a partner's income while they care for you.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-point" style="--at:56%"></i></div>
+            <span class="cov-shape">Pays once, on diagnosis</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6 · FUNERAL  (no photo supplied — drawn to match the duotone set) -->
+      <article class="cov-card rise d2">
+        <div class="cov-media drawn-art">
+          <svg viewBox="0 0 400 225" role="img" aria-label="A sheltering arch over a lit candle, drawn in blue">
+            <defs>
+              <linearGradient id="fnSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6491DE"/>
+                <stop offset="100%" stop-color="#16305C"/>
+              </linearGradient>
+              <radialGradient id="fnGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#DCE8FB" stop-opacity=".85"/>
+                <stop offset="100%" stop-color="#DCE8FB" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="225" fill="url(#fnSky)"/>
+            <g stroke="#BBD0F2" stroke-opacity=".34" stroke-width="1" fill="none">
+              <path d="M0 168 C 70 152, 130 182, 200 164 C 270 146, 330 176, 400 158"/>
+              <path d="M0 190 C 80 176, 140 202, 210 186 C 280 170, 340 196, 400 180"/>
+            </g>
+            <!-- sheltering arch -->
+            <path d="M118 205 V112 a82 82 0 0 1 164 0 V205" fill="none" stroke="#CDDDF7" stroke-opacity=".55" stroke-width="2.5"/>
+            <path d="M141 205 V116 a59 59 0 0 1 118 0 V205" fill="none" stroke="#CDDDF7" stroke-opacity=".28" stroke-width="1.5"/>
+            <!-- candle glow -->
+            <circle cx="200" cy="126" r="54" fill="url(#fnGlow)"/>
+            <!-- flame -->
+            <path d="M200 100 c 9 12, 11 17, 11 23 a 11 11 0 0 1 -22 0 c 0 -7, 3 -12, 11 -23 Z" fill="#FFFFFF"/>
+            <!-- candle body -->
+            <rect x="191" y="136" width="18" height="56" rx="3" fill="#FFFFFF" fill-opacity=".92"/>
+            <rect x="176" y="192" width="48" height="7" rx="3.5" fill="#CDDDF7" fill-opacity=".7"/>
+          </svg>
+        </div>
+        <div class="cov-body">
+          <h3>Funeral Insurance</h3>
+          <p>A smaller policy sized to final expenses &mdash; the service, burial or cremation, and the bills that arrive with them. It pays quickly and usually accepts applicants that larger policies decline.</p>
+          <div class="cov-span" aria-hidden="true">
+            <div class="span-track"><i class="span-lead"></i><i class="span-cap"></i></div>
+            <span class="cov-shape">Pays at the end</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ PROCESS ══════════════════ -->
+<section class="band process">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow on-dark rise">How it works</p>
+      <h2 class="h-sec rise d1">Three conversations, not thirty</h2>
+      <p class="lede rise d2">A straightforward path from the first call to an active policy.</p>
+    </div>
+    <div class="step-grid">
+      <div class="step rise">
+        <span class="n">STEP 01</span>
+        <h3>Tell us the situation</h3>
+        <p>Fifteen minutes on your health, your dependants, your debts and your budget. Online, or over the phone. No medical exam at this stage.</p>
+      </div>
+      <div class="step rise d1">
+        <span class="n">STEP 02</span>
+        <h3>See the real options</h3>
+        <p>I take your profile to my carriers and come back with the shortlist &mdash; priced, compared, and with the exclusions spelled out.</p>
+      </div>
+      <div class="step rise d2">
+        <span class="n">STEP 03</span>
+        <h3>Apply and get covered</h3>
+        <p>Choose a policy, complete the application with me, and I manage underwriting through to your approval.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ TESTIMONIALS ══════════════════ -->
+<!-- ⚠ PLACEHOLDER CONTENT — replace all three quotes and attributions with real,
+     documented client feedback before this site goes live. Publishing invented
+     reviews on a licensed insurance site is a compliance problem, not a style one. -->
+<section class="band testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow rise">Testimonials</p>
+      <h2 class="h-sec rise d1">What clients say</h2>
+      <p class="lede rise d2">A few words from people Eric has placed coverage for.</p>
+    </div>
+
+    <div class="tm-grid">
+      <article class="tm-card rise">
+        <p class="tm-quote">Eric took the time to walk us through term versus whole life until it actually made sense. We never felt pushed toward the more expensive option.</p>
+        <div class="tm-by">
+          <span class="tm-mark" aria-hidden="true">MR</span>
+          <div><div class="tm-name">M. R.</div><div class="tm-meta">Calgary, AB</div></div>
+        </div>
+      </article>
+
+      <article class="tm-card rise d1">
+        <p class="tm-quote">I have a health history that made me nervous about applying. Eric knew which insurer would look at it fairly, and I was approved at a rate I did not expect.</p>
+        <div class="tm-by">
+          <span class="tm-mark" aria-hidden="true">DW</span>
+          <div><div class="tm-name">D. W.</div><div class="tm-meta">Critical illness cover</div></div>
+        </div>
+      </article>
+
+      <article class="tm-card rise d2">
+        <p class="tm-quote">He still checks in every year. When our second child arrived he adjusted the policy the same week instead of waiting for a renewal notice.</p>
+        <div class="tm-by">
+          <span class="tm-mark" aria-hidden="true">PN</span>
+          <div><div class="tm-name">P. N.</div><div class="tm-meta">Family coverage</div></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ QUOTE ══════════════════ -->
+<section class="band" id="quote">
+  <div class="wrap">
+    <div class="quote-grid">
+
+      <div class="quote-side">
+        <p class="eyebrow rise" style="margin-bottom:22px;">Get a quote</p>
+        <h2 class="h-sec rise d1" style="margin-bottom:20px;">Start your quote online</h2>
+        <p class="lede rise d2">
+          Fill this in and Eric gets back to you &mdash; usually the same business day.
+          Quotes are free, nothing is binding until you sign an application, and you can
+          do the whole first step from your phone.
+        </p>
+        <ul class="rise d2">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Free and online</b><span>Start here; no obligation to buy.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>No medical exam to start</b><span>Options can be priced before any testing.</span></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <div><b>Your details stay private</b><span>Shared with carriers only to price your quote.</span></div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NOTE: front-end only. Point `action` at your form handler
+           (Formspree, Netlify Forms, or your own endpoint) to go live. -->
+      <div class="qform rise d2" id="qform">
+        <form class="f-live" id="quoteForm" novalidate>
+          <div class="f-row">
+            <div class="field">
+              <label for="fname">First name <span class="req">*</span></label>
+              <input type="text" id="fname" name="fname" autocomplete="given-name" required>
+              <span class="err">Enter your first name.</span>
+            </div>
+            <div class="field">
+              <label for="lname">Last name <span class="req">*</span></label>
+              <input type="text" id="lname" name="lname" autocomplete="family-name" required>
+              <span class="err">Enter your last name.</span>
+            </div>
+          </div>
+
+          <div class="f-row">
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+              <span class="err">Enter a valid email address.</span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="403-000-0000" required>
+              <span class="err">Enter a phone number we can reach you on.</span>
+            </div>
+          </div>
+
+          <div class="f-row">
+            <div class="field">
+              <label for="coverage">Coverage of interest <span class="req">*</span></label>
+              <select id="coverage" name="coverage" required>
+                <option value="">Choose one</option>
+                <option>Permanent Insurance</option>
+                <option>Whole Life Insurance</option>
+                <option>Term Insurance</option>
+                <option>Accident &amp; Sickness Insurance</option>
+                <option>Critical Illness Insurance</option>
+                <option>Funeral Insurance</option>
+                <option>Not sure yet &mdash; help me decide</option>
+              </select>
+              <span class="err">Pick a coverage, or choose "Not sure yet".</span>
+            </div>
+            <div class="field">
+              <label for="age">Your age</label>
+              <input type="number" id="age" name="age" min="18" max="100" inputmode="numeric">
+              <span class="err">Enter an age between 18 and 100.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="msg">Anything we should know?</label>
+            <textarea id="msg" name="msg" placeholder="Dependants, existing policies, health conditions, budget &mdash; whatever helps us price it accurately."></textarea>
+          </div>
+
+          <div class="consent" id="consentWrap">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree that Future Insurance Solutions Inc. may contact me about this request.</label>
+          </div>
+
+          <button type="submit" class="btn btn-solid">Send my request</button>
+          <p class="form-note">Or call +1 403 689 7740 &middot; Eric.claveria@mygreatway.ca</p>
+        </form>
+
+        <div class="sent" id="sent" role="status" aria-live="polite">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12.4l2.6 2.6L16 9.6"/></svg>
+          <h3>Request received</h3>
+          <p>Eric will get back to you, usually the same business day. If it's urgent, call +1 403 689 7740.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ FAQ ══════════════════ -->
+<section class="band faq" id="faq">
+  <div class="wrap">
+    <div class="faq-wrap">
+      <div class="sec-head" style="margin-bottom:44px;">
+        <p class="eyebrow rise">FAQ</p>
+        <h2 class="h-sec rise d1">Questions worth asking</h2>
+      </div>
+
+      <div class="faq-list rise d2">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Does a quote cost anything?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>No. Quotes are free and carry no obligation, and you can start one online. I'm paid by the carrier when a policy is issued, which means you get the same premium going through me as you would going direct &mdash; with the comparison work done for you.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Term or whole life &mdash; which should I take?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>It depends on what you're covering. Term buys the most protection per dollar for a defined window, which suits a mortgage or the years your children are dependent. Whole life costs more but never expires and accumulates cash value, which suits estate planning or a permanent obligation. Plenty of households hold both.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Can I hold more than one type of coverage?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>Yes, and most people should. Life insurance pays your family after you die; critical illness and accident &amp; sickness pay you while you're alive but unable to earn. They cover different risks, so pairing them is normal rather than excessive.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">Will I need a medical exam?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>Not to get a quote. Whether the policy itself requires one depends on the carrier, your age and the coverage amount &mdash; some issue smaller policies on answers alone. I'll tell you which options avoid an exam before you apply.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">What if my health isn't perfect?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>Carriers assess conditions very differently, and this is where an independent agent earns their keep. A history that one insurer rates heavily may be accepted at standard rates by another. Tell me the full picture and I'll place your file where it's treated best.</p></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">How does a claim actually work?<span class="faq-ico" aria-hidden="true"></span></button>
+          <div class="faq-a"><p>Call me first. I identify what the carrier needs, help gather the documentation, submit it, and follow up until the claim is settled &mdash; so your family isn't learning the process during the worst week of their life.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ CTA ══════════════════ -->
+<section class="cta">
+  <div class="wrap">
+    <div>
+      <h2>Find out what you're actually covered for</h2>
+      <p>A free review takes about fifteen minutes. Start online or call.</p>
+    </div>
+    <div class="cta-acts">
+      <a href="#quote" class="btn btn-onblue">Get a free quote</a>
+      <a href="tel:+14036897740" class="btn btn-ghost-dark">Call +1 403 689 7740</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════ FOOTER ══════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <div class="f-brand">
+          <svg viewBox="0 0 40 44" fill="none" aria-hidden="true">
+            <path d="M20 2.5 L36 8.2 V21 C36 32.4 29.1 40 20 42.8 C10.9 40 4 32.4 4 21 V8.2 Z" fill="#6491DE"/>
+            <path d="M12.6 21.8 L17.9 27.2 L28 15.4" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="brand-text">Future Insurance<span>Solutions Inc.</span></span>
+        </div>
+        <p class="f-about">Eric Claveria is an independent life and health insurance agent in Calgary, Alberta, helping families choose coverage that fits the life they're actually living.</p>
+      </div>
+
+      <div class="f-col">
+        <h4>Coverages</h4>
+        <a href="#coverages">Permanent</a>
+        <a href="#coverages">Whole life</a>
+        <a href="#coverages">Term</a>
+        <a href="#coverages">Accident &amp; sickness</a>
+        <a href="#coverages">Critical illness</a>
+        <a href="#coverages">Funeral</a>
+      </div>
+
+      <div class="f-col">
+        <h4>Company</h4>
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#quote">Get a quote</a>
+        <a href="#faq">FAQ</a>
+      </div>
+
+      <div class="f-col">
+        <h4>Contact</h4>
+        <a href="tel:+14036897740">+1 403 689 7740</a>
+        <a href="mailto:Eric.claveria@mygreatway.ca" class="f-email">Eric.claveria@mygreatway.ca</a>
+        <a href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://maps.google.com/?q=1223+31+Ave+NE,+Calgary,+AB+T2E+7W1,+Canada" target="_blank" rel="noopener">1223 31 Ave NE<br>Calgary, AB T2E 7W1</a>
+        <p>Mon&ndash;Fri, 9am&ndash;6pm MT</p>
+      </div>
+    </div>
+
+    <div class="f-bottom">
+      <span>&copy; <span id="yr">2026</span> Future Insurance Solutions Inc.</span>
+      <span class="disclaimer">This site is general information only, not financial or insurance advice. Coverage, eligibility and exclusions are set by the issuing carrier and confirmed in your policy documents.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/14036897740?text=Hi%20Eric%2C%20I%27d%20like%20to%20ask%20about%20insurance%20coverage." target="_blank" rel="noopener"
+   aria-label="Message Eric on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 18.02h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.25c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.1-8.24 8.1Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.84-.2-.49-.4-.42-.56-.43h-.47c-.16 0-.43.06-.65.31-.22.25-.85.84-.85 2.04s.87 2.37 1 2.53c.12.16 1.72 2.63 4.17 3.69.58.25 1.04.4 1.39.51.58.19 1.12.16 1.54.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/></svg>
+  <span>Message Eric</span>
+</a>
+
+<script>
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- current year ---------- */
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  /* ---------- header shadow on scroll ---------- */
+  var header = document.getElementById('site-header');
+  function onScroll(){ header.classList.toggle('stuck', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* ---------- mobile drawer ---------- */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  function setDrawer(open){
+    drawer.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  burger.addEventListener('click', function(){
+    setDrawer(!drawer.classList.contains('open'));
+  });
+  drawer.addEventListener('click', function(e){
+    if(e.target.closest('a')) setDrawer(false);
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && drawer.classList.contains('open')){
+      setDrawer(false);
+      burger.focus();
+    }
+  });
+
+  /* ---------- scroll reveal ---------- */
+  var rises = document.querySelectorAll('.rise');
+  if(reduce || !('IntersectionObserver' in window)){
+    rises.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
+    rises.forEach(function(el){ io.observe(el); });
+  }
+
+  /* ---------- draw the hero span diagram once it's in view ---------- */
+  var spanbox = document.getElementById('spanbox');
+  if(reduce || !('IntersectionObserver' in window)){
+    spanbox.classList.add('drawn');
+  } else {
+    var sio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          setTimeout(function(){ spanbox.classList.add('drawn'); }, 260);
+          sio.unobserve(en.target);
+        }
+      });
+    }, {threshold:0.25});
+    sio.observe(spanbox);
+  }
+
+  /* ---------- active nav link ---------- */
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('[data-nav]'));
+  var sections = navLinks
+    .map(function(a){ return document.querySelector(a.getAttribute('href')); })
+    .filter(Boolean);
+
+  if('IntersectionObserver' in window){
+    var nio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(!en.isIntersecting) return;
+        navLinks.forEach(function(a){
+          a.classList.toggle('active', a.getAttribute('href') === '#' + en.target.id);
+        });
+      });
+    }, {rootMargin:'-45% 0px -50% 0px'});
+    sections.forEach(function(s){ nio.observe(s); });
+  }
+
+  /* ---------- FAQ accordion ---------- */
+  var faqBtns = document.querySelectorAll('.faq-q');
+  faqBtns.forEach(function(btn){
+    var item = btn.closest('.faq-item');
+    var ans  = item.querySelector('.faq-a');
+
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = '';
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+
+      if(!isOpen){
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // keep an open answer correctly sized when the viewport changes
+  var rsz;
+  window.addEventListener('resize', function(){
+    clearTimeout(rsz);
+    rsz = setTimeout(function(){
+      var open = document.querySelector('.faq-item.open .faq-a');
+      if(open) open.style.maxHeight = open.scrollHeight + 'px';
+    }, 140);
+  });
+
+  /* ---------- quote form validation ----------
+     Front end only. Wire `form.action` to your handler to actually deliver. */
+  var form = document.getElementById('quoteForm');
+  var qbox = document.getElementById('qform');
+  var sent = document.getElementById('sent');
+  var consentWrap = document.getElementById('consentWrap');
+
+  function mark(el, bad){
+    var f = el.closest('.field') || el.closest('.consent');
+    if(f) f.classList.toggle('bad', bad);
+    return !bad;
+  }
+
+  function validate(){
+    var ok = true;
+    var val = function(id){ return document.getElementById(id).value.trim(); };
+
+    ok = mark(document.getElementById('fname'), val('fname').length < 1) && ok;
+    ok = mark(document.getElementById('lname'), val('lname').length < 1) && ok;
+    ok = mark(document.getElementById('email'), !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email'))) && ok;
+    ok = mark(document.getElementById('phone'), val('phone').replace(/\D/g,'').length < 10) && ok;
+    ok = mark(document.getElementById('coverage'), val('coverage') === '') && ok;
+
+    var ageEl = document.getElementById('age');
+    var age = val('age');
+    ok = mark(ageEl, age !== '' && (isNaN(+age) || +age < 18 || +age > 100)) && ok;
+
+    var consent = document.getElementById('consent');
+    consentWrap.classList.toggle('bad', !consent.checked);
+    if(!consent.checked) ok = false;
+
+    return ok;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!validate()){
+      var firstBad = qbox.querySelector('.bad input, .bad select');
+      if(firstBad) firstBad.focus();
+      return;
+    }
+    qbox.classList.add('done');
+    sent.classList.add('show');
+    sent.scrollIntoView({behavior: reduce ? 'auto' : 'smooth', block:'center'});
+  });
+
+  // clear an error as soon as the field is corrected
+  form.addEventListener('input', function(e){
+    var f = e.target.closest('.field');
+    if(f && f.classList.contains('bad')) f.classList.remove('bad');
+    if(e.target.id === 'consent') consentWrap.classList.remove('bad');
+  });
+})();
+</script>
+
+</body>
+</html>
