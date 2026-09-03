@@ -1549,10 +1549,25 @@ footer .f-about{font-size:.93rem;max-width:34ch;line-height:1.6;}
     }
   });
 
-  /* ---------- scroll reveal ---------- */
+  /* ---------- scroll reveal ----------
+     Content must never be left invisible. Three layers: reveal whatever is
+     already on screen, observe the rest, and force everything visible after a
+     short grace period in case the observer never fires (background tab,
+     throttled mobile browser, layout still settling). */
   var rises = document.querySelectorAll('.rise');
-  if(reduce || !('IntersectionObserver' in window)){
+  var revealAll = function(){
     rises.forEach(function(el){ el.classList.add('in'); });
+  };
+  var revealInView = function(){
+    rises.forEach(function(el){
+      if(el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0) el.classList.add('in');
+    });
+  };
+
+  if(reduce || !('IntersectionObserver' in window)){
+    revealAll();
   } else {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
@@ -1560,22 +1575,27 @@ footer .f-about{font-size:.93rem;max-width:34ch;line-height:1.6;}
       });
     }, {rootMargin:'0px 0px -8% 0px', threshold:0.08});
     rises.forEach(function(el){ io.observe(el); });
+
+    revealInView();
+    window.addEventListener('load', revealInView);
+    setTimeout(revealInView, 300);
+    // last resort: never leave anything stuck at opacity 0
+    setTimeout(revealAll, 2500);
   }
 
   /* ---------- draw the hero span diagram once it's in view ---------- */
   var spanbox = document.getElementById('spanbox');
+  var draw = function(){ spanbox.classList.add('drawn'); };
   if(reduce || !('IntersectionObserver' in window)){
-    spanbox.classList.add('drawn');
+    draw();
   } else {
     var sio = new IntersectionObserver(function(entries){
       entries.forEach(function(en){
-        if(en.isIntersecting){
-          setTimeout(function(){ spanbox.classList.add('drawn'); }, 260);
-          sio.unobserve(en.target);
-        }
+        if(en.isIntersecting){ setTimeout(draw, 260); sio.unobserve(en.target); }
       });
     }, {threshold:0.25});
     sio.observe(spanbox);
+    setTimeout(draw, 2500);   // the bars must never stay empty
   }
 
   /* ---------- active nav link ---------- */
