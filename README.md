@@ -29,11 +29,26 @@ Then open http://127.0.0.1:8777
 
 ## Before going live
 
-1. **Testimonials are placeholders.** Replace the three quotes in the
-   `#testimonials` section with real, documented client feedback.
+1. **Testimonial wording.** The three names (Dr. Swapna, Miguel, Hemant) were
+   supplied by the client, but the quote text is still drafted copy. Confirm each
+   person actually said something to that effect, or swap in their real words.
 2. **The quote form has no backend.** Point `<form id="quoteForm">` at a handler
    (Formspree, Netlify Forms, or your own endpoint) so submissions are delivered.
    For Netlify Forms, add `netlify` and `name="quote"` to the `<form>` tag.
+
+## Languages
+
+The site ships in English, French and Tagalog. Translations live in the `DICT`
+object inside the "TRILINGUAL RUNTIME" `<script>` block in `index.html`, keyed by
+the page's own English source text — so adding or editing copy means adding the
+matching key to `DICT`, not adding markup attributes.
+
+The switcher is the EN / FR / TL control in the header. A visitor's choice is
+remembered in `localStorage`; first-time visitors get French or Tagalog
+automatically if that's their browser language.
+
+**Any new English copy that isn't added to `DICT` will stay in English** when the
+page is switched. To audit, diff the page's visible strings against `DICT` keys.
 
 ## Contact details in the site
 
