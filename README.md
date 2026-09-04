@@ -29,12 +29,16 @@ Then open http://127.0.0.1:8777
 
 ## Before going live
 
-1. **Testimonial wording.** The three names (Dr. Swapna, Miguel, Hemant) were
-   supplied by the client, but the quote text is still drafted copy. Confirm each
-   person actually said something to that effect, or swap in their real words.
-2. **The quote form has no backend.** Point `<form id="quoteForm">` at a handler
-   (Formspree, Netlify Forms, or your own endpoint) so submissions are delivered.
-   For Netlify Forms, add `netlify` and `name="quote"` to the `<form>` tag.
+1. ~~Testimonial wording~~ — **approved by Eric Claveria, 2026-09-04.** The three
+   quotes are final copy. They are attributed to named individuals, so don't
+   reword them without his sign-off.
+2. ~~The quote form has no backend~~ — **live on Netlify Forms.** Submissions
+   appear under Forms → `quote` and email to Eric.claveria@mygreatway.ca.
+   Verified end to end 2026-09-04. On any host that can't process form POSTs
+   (GitHub Pages included) the form correctly shows its failure panel with
+   Eric's phone and WhatsApp instead of a false success.
+
+3. **French and Tagalog** — reviewed and accepted, 2026-09-04.
 
 ## Going live on www.futureinsurancesolutions.com
 
