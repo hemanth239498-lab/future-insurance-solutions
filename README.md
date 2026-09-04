@@ -36,6 +36,27 @@ Then open http://127.0.0.1:8777
    (Formspree, Netlify Forms, or your own endpoint) so submissions are delivered.
    For Netlify Forms, add `netlify` and `name="quote"` to the `<form>` tag.
 
+## Going live on www.futureinsurancesolutions.com
+
+The site is deliberately invisible to search until the real domain serves it.
+Publishing the GitHub Pages hostname first would get the wrong URL indexed.
+
+**Launch checklist — all four, in one commit:**
+
+1. `index.html` — delete the `<meta name="robots" content="noindex, nofollow">`
+   tag and the PREVIEW BUILD comment above it.
+2. `index.html` — in the SHARING + SEARCH block, change `og:url`, `og:image`
+   and `twitter:image` from the GitHub Pages host to
+   `https://www.futureinsurancesolutions.com`, and add:
+   `<link rel="canonical" href="https://www.futureinsurancesolutions.com/">`
+3. `robots.txt` — replace the preview block with the Allow + Sitemap lines
+   already written in its comment.
+4. Submit `https://www.futureinsurancesolutions.com/sitemap.xml` in Google
+   Search Console.
+
+`share-card.jpg` (1200x630) is the WhatsApp / Facebook / LinkedIn preview image.
+Regenerate it if the headline or contact details change.
+
 ## Languages
 
 The site ships in English, French and Tagalog. Translations live in the `DICT`
