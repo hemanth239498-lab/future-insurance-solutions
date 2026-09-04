@@ -1,11 +1,4 @@
-# PREVIEW MODE — the site is blocked from search while it is served from the
-# temporary GitHub Pages URL. Publishing it there would get the wrong hostname
-# indexed, which then has to be undone with redirects once the real domain is
-# live. On launch day, replace everything below with:
-#
-#   User-agent: *
-#   Allow: /
-#   Sitemap: https://www.futureinsurancesolutions.com/sitemap.xml
-#
 User-agent: *
-Disallow: /
+Allow: /
+
+Sitemap: https://www.futureinsurancesolutions.com/sitemap.xml

@@ -40,23 +40,18 @@ Then open http://127.0.0.1:8777
 
 3. **French and Tagalog** — reviewed and accepted, 2026-09-04.
 
-## Going live on www.futureinsurancesolutions.com
+## Live site
 
-The site is deliberately invisible to search until the real domain serves it.
-Publishing the GitHub Pages hostname first would get the wrong URL indexed.
+**https://www.futureinsurancesolutions.com** — hosted on Netlify, HTTPS issued,
+the bare domain redirects to `www`.
 
-**Launch checklist — all four, in one commit:**
+Launched 2026-09-04: `noindex` removed, `robots.txt` opened, share tags and the
+canonical pointed at the domain. The site is also reachable at
+`future-insurance-solutions.netlify.app` and on GitHub Pages; the canonical tag
+tells search engines which one counts, so don't remove it.
 
-1. `index.html` — delete the `<meta name="robots" content="noindex, nofollow">`
-   tag and the PREVIEW BUILD comment above it.
-2. `index.html` — in the SHARING + SEARCH block, change `og:url`, `og:image`
-   and `twitter:image` from the GitHub Pages host to
-   `https://www.futureinsurancesolutions.com`, and add:
-   `<link rel="canonical" href="https://www.futureinsurancesolutions.com/">`
-3. `robots.txt` — replace the preview block with the Allow + Sitemap lines
-   already written in its comment.
-4. Submit `https://www.futureinsurancesolutions.com/sitemap.xml` in Google
-   Search Console.
+Submit `https://www.futureinsurancesolutions.com/sitemap.xml` to Google Search
+Console to speed up first indexing.
 
 `share-card.jpg` (1200x630) is the WhatsApp / Facebook / LinkedIn preview image.
 Regenerate it if the headline or contact details change.
